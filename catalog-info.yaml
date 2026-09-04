@@ -1,0 +1,31 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: one-time-secret
+  description: |
+    This is a fork of One Time Secret. We use this to provide secure secret sharing with users.
+    - title: Website
+      url: https://secrets.socialindoor.tech
+    - title: Documentation
+      url: https://github.com/Social-Indoor/onetimesecret/tree/main/docs
+  annotations:
+    github.com/project-slug: Social-Indoor/onetimesecret
+    backstage.io/techdocs-ref: dir:.
+spec:
+  type: website
+  owner: user:default/rafe_anderson_socialindoor_com
+  lifecycle: internal/development
+  providesApis:
+    - $
+
+kind: API
+metadata:
+  name: backstage-backend-core-api
+  description: Combined OpenAPI specification for the entire Backstage application infrastructure
+spec:
+  type: openapi
+  lifecycle: production
+  owner: platform-team
+  definition:
+    # This magic internal path automatically bundles and references all registered core plugin endpoints
+    $openapi: http://localhost:7007/api/catalog/openapi.json
