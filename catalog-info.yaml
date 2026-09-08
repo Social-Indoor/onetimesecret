@@ -18,9 +18,11 @@ spec:
   providesApis:
     - $
 
+---
+apiVersion: backstage.io/v1alpha1
 kind: API
 metadata:
-  name: backstage-backend-core-api
+  name: onetimesecret-api
   description: Combined OpenAPI specification for the entire Backstage application infrastructure
 spec:
   type: openapi
@@ -28,4 +30,4 @@ spec:
   owner: platform-team
   definition:
     # This magic internal path automatically bundles and references all registered core plugin endpoints
-    $openapi: http://localhost:7007/api/catalog/openapi.json
+    $openapi: ./spec/openapi.json
