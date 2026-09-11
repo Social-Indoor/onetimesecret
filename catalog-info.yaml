@@ -13,7 +13,7 @@ metadata:
     backstage.io/techdocs-ref: dir:.
 spec:
   type: website
-  owner: user:default/rafe_anderson_socialindoor_com
+  owner: group:default/engineering
   lifecycle: internal/development
   providesApis:
     - $
